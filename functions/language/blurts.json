@@ -1,0 +1,12 @@
+{
+  "default": {
+    "announcement": "Hey {name}, you have new notices. Say “Hey Google, talk to Notice Board” to learn more.",
+    "schedule": "Good day {name}, just a reminder that that the event you signed up for is happening in 1 hour time. Say ‘Ok Google, talk to Notice Board’ to find out more.",
+    "event": "Hello {name}, you have received new invites. Say “Ok Google, talk to Notice Board” to check them out."
+  },
+  "ja-JP": {
+    "announcement": "{name}さん、新しいお知らせがあります。もっと知りたければ「ねえGoogle、掲示板につないで」とおっしゃってください。",
+    "schedule": "{name}さん、こんにちは。お知らせです。登録されたイベントが1時間後に行われます。詳しくは「Ok Google掲示板につないで」とおっしゃってください。",
+    "event": "{name}さん、新しいイベントがあります。もっと知りたければ「OK Google、若葉台ガイドにつないで」とおっしゃってください。"
+  }
+}
