@@ -35,9 +35,9 @@ This repo contains everything you need to create your own community noticeboard.
      }
     ```
 8. Go to `Develop > Database`, scroll down the page and find `Or choose Realtime Database` and click `Create Database` and then click `enable`
-9. Now go to your `Project Settings > General` in Firebase
+9. Now go to your `⚙︎ > Project Settings > General` in Firebase
 10. Make a note of your `Project ID`
-11. Then go to your `Project Settings > Service Accounts` in Firebase and select `Database secrets`
+11. Then go to your `⚙︎ > Project Settings > Service Accounts` in Firebase and select `Database secrets`
 12. Then press `show` and make a note of your `Database secret`
 
 ### Setup the Sheet
