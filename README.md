@@ -53,9 +53,10 @@ This repo contains everything you need to create your own community noticeboard.
 
 ### Setup Firebase
 1. Download and install [Firebase CLI](https://firebase.google.com/docs/cli/). Once you have completed step 4 under "Install the Firebase CLI" continue with the below steps.
-2. You need to initialize a new Firebase project, run the following command from within your project's directory `firebase init` and follow the on screen intructions. For most options you can use the defaults except for the below:
+2. You need to initialize a new Firebase project, run the following command from within your project's directory `firebase init` and follow the on screen intructions. **For most options you can use the defaults except for the below**:
     * Select `Functions` and `Hosting`
     * Select the project name you created via the Firebase Console e.g. `Community Keijiban`
+        * If your project name is not listed select `create a new project` and after `firebase init` has completed you can use `firebase use --add` to add your project name
     * Select `JavaScript` for the `Functions` language
     * Say yes to enforce ESLint style
     * When asked to overwrite `package.json`, `.eslintrc.josn` and `index.js` say No
