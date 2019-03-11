@@ -71,6 +71,9 @@ This repo contains everything you need to create your own community noticeboard.
 ### Enable APIs and Create Credentials
 1. Go to [Google Cloud Console](https://console.cloud.google.com), make sure to login using the same account you used to setup Firebase
 2. Select the project name you created in Firebase
+
+![Google Cloud Console](./assets/images/image30.png)
+
 3. Go to `APIs & Services > Library`
 4. Search for `Cloud Text-to-Speech API`
 5. Select it and then press the Enable button.
@@ -78,11 +81,31 @@ This repo contains everything you need to create your own community noticeboard.
 6.  Go back to `APIs & Services > Library` and search for `Google Calendar API`
 7. Select it and press the Enable button
 8. Go to `APIs & Services > Credentials > OAuth consent screen`
+
+![OAuth consent screen](./assets/images/image31.png)
+
 9. Under `Support email` select an email address 
-9. Scroll down add the `Functions` domain under `Authorized domains` 
-10. Then add the `Hosting URL` to `Application Homepage link` and `Application Privacy Policy link`. Then press save.
+
+![Choose your email](./assets/images/image32.png)
+
+10. Scroll down add the `Functions` domain under `Authorized domains`. For example: 	
+`us-central1-[PROJECT-ID].cloudfunctions.net`
+
+![Choose your email](./assets/images/image33.png)
+
+11. Then add the `Hosting URL` to `Application Homepage link` and `Application Privacy Policy link`. . For example: 	
+`https://[PROJECT-ID].firebaseapp.com`. Then press save.
+
+![Choose your email](./assets/images/image34.png)
+
 11. This should redirect you back to `APIs & Services > Credentials`. Under `OAuth 2.0 client IDs` click on `Web client (auto created by Google Service)`
+
+![Choose your email](./assets/images/image35.png)
+
 12. Under `Authorized redirect URIs` add `https://us-central1-[project-id].cloudfunctions.net/oauthcallback` replacing `[project-id]` with your Firebase project ID. Then press save.
+
+![Choose your email](./assets/images/image36.png)
+
 13. This should redirect you back to `APIs & Services > Credentials`. Now under under `OAuth 2.0 client IDs` download the JSON file for `Web client (auto created by Google Service)` 
 14. Rename the file to `calendar.json` and place into your project folder under `functions>keys`. You may need to create the `keys` folder if you do not have it or you may need to replace `calendar.json` if one already exists.
 15. Go back to `Google Cloud Console` and open `APIs & Services > Credentials` and select `Create credentials > Service account key`
