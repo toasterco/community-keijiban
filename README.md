@@ -12,8 +12,6 @@ Community Keijiban is built on [Actions on Google](https://developers.google.com
 
 This repo contains everything you need to create your own community noticeboard. We won't go into all the details but you can explore the source code of each part to learn how it all works together. The below instructions allow you to build your own community management tool from scratch. 
 
-
-
 ### Before you start
 1. Clone this repo
 2. Make a copy of this [sheet](https://docs.google.com/spreadsheets/d/1Vo6eGPo3gIH3JPdAoJEB1AkyF781m__g_PGBlIXqwGU/edit#gid=0)
@@ -246,14 +244,10 @@ http://arduino.esp8266.com/stable/package_esp8266com_index.json
 1. Go to the [Actions on Google Console](https://console.actions.google.com) and select your project
 2. Click on `Test > Simulator` and try it out. You can also do this directly on your Google Assistant/Home that is logged in with you account.
 
-### Adding Other Languages (optional)
-Currently the project only supports Japanese and English. This can be extended to support other languages with a few modifcations to the code. 
-
 ### Extending the project
 Ideas on how to extend this project
-* Add other languages
+* Currently the project only supports Japanese and English. This can be extended to support other languages with a few modifcations to the code.
 * Close the loop by adding an attending status on the Google Sheet
-* ...
 
 ## Contributors
 Made by [Toaster](https://toaster.co/) and friends at the [Google Creative Lab](https://github.com/googlecreativelab).
