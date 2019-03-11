@@ -12,19 +12,20 @@ Community Keijiban is built on [Actions on Google](https://developers.google.com
 
 This repo contains everything you need to create your own community noticeboard. We won't go into all the details but you can explore the source code of each part to learn how it all works together. The below instructions allow you to build your own community management tool from scratch. 
 
-Remember to clone this repo before starting the the project.
+
 
 ### Before you start
-1. Make a copy of this [sheet](https://docs.google.com/spreadsheets/d/1Vo6eGPo3gIH3JPdAoJEB1AkyF781m__g_PGBlIXqwGU/edit#gid=0)
-2. Go to [Firebase](https://firebase.google.com/) and login.
+1. Clone this repo
+2. Make a copy of this [sheet](https://docs.google.com/spreadsheets/d/1Vo6eGPo3gIH3JPdAoJEB1AkyF781m__g_PGBlIXqwGU/edit#gid=0)
+3. Go to [Firebase](https://firebase.google.com/) and login.
     * If you don't have an account it's free to sign up and use.
-3. In Firebase Console add a new project
+4. In Firebase Console add a new project
     * Give it a name e.g. Community Keijiban
     * Select your locations and agree to the T&Cs
-    * Press "Create project" then "Continue" once its created
-4. Go to `Develop > Storage` and press `Get Started` and follow the prompt.
-7. In `Storage` create a folder called `audio` 
-8. Then go to the `rules` tab and replace the current rules to allow public reads, using the below code (Press `Publish` to save): 
+    * Press `Create project` then `Continue` once its created
+5. Go to `Develop > Storage` and press `Get Started` and follow the prompt.
+6. In `Storage` create a folder called `audio` 
+7. Then go to the `rules` tab and replace the current rules to allow public reads, using the below code (Press `Publish` to save): 
     ```JavaScript
     service firebase.storage {
         match /b/{bucket}/o {
@@ -35,7 +36,7 @@ Remember to clone this repo before starting the the project.
         }
      }
     ```
-9. Go to `Develop > Database`, scroll down the page and find `Or choose Realtime Database` and click `Create Database` and click `enable`
+8. Go to `Develop > Database`, scroll down the page and find `Or choose Realtime Database` and click `Create Database` and then click `enable`
 9. Now go to your `Project Settings > General` in Firebase
 10. Make a note of your `Project ID`
 11. Then go to your `Project Settings > Service Accounts` in Firebase and select `Database secrets`
@@ -50,7 +51,7 @@ Remember to clone this repo before starting the the project.
 4. Save the changes 
 5. Go to `File > Project Properties > Info` and make a note of the `Project key` 
 5. Close the Script Editor
-5. Refresh the Google Sheet
+6. Refresh the Google Sheet
 
 ### Setup Firebase
 1. Download and install [Firebase CLI](https://firebase.google.com/docs/cli/). Once you have completed step 4 under "Install the Firebase CLI" continue with the below steps.
@@ -98,29 +99,29 @@ Remember to clone this repo before starting the the project.
     * Press "Create"
 3. Once created select the newly created agent and go to the settings page
 4. Click on `Export and Import`
-8. Click `IMPORT FROM ZIP`, select the file `assets/dialogflow.zip` from your project folder and type the word IMPORT to enable the import button.
+5. Click `IMPORT FROM ZIP`, select the file `assets/dialogflow.zip` from your project folder and type the word IMPORT to enable the import button.
     * After importing if `ja` does not display under your agent name you can add it by going to `Languages` in the Agent settings and selecting `Japanese - ja` from the drop down.
-9. Now click on `Fullfilment` and enable the `Webhook` option.
-10. Then copy `https://us-central1-[PROJECT-ID].cloudfunctions.net/dialogflowWebhook`, replace `[PROJECT-ID]` with your Firebase project ID, into the URL field
-11. Under `DOMAINS` select `Enable webhook for all domains` then press `Save`.
-10. In Dialogflow click on `Integrations` on the main menu and then click on `Integration Settings` under Google Assistant. A modal window will popup
-12. Toggle on `Auto-preview changes`
-13. Click on `Test` to goto the Actions on Google console 
-14. Go to `Advanced Options >Account Linking`
-15. Select `Yes, allow users to sign up for new accounts via voice` and press `Next`
-16. Select `Google Sign In` and press `Next`
-17. Take note of the `Client ID` and then create a new file in `functions/keys` in your project folder called `constants.js`. Open the `constants.js` in your preffered IDE and paste the below code into it. Replacing `[CLIENT-ID]` with the client ID from Actions on Google console:
+6. Now click on `Fullfilment` and enable the `Webhook` option.
+7. Then copy `https://us-central1-[PROJECT-ID].cloudfunctions.net/dialogflowWebhook`, replace `[PROJECT-ID]` with your Firebase project ID, into the URL field
+8. Under `DOMAINS` select `Enable webhook for all domains` then press `Save`.
+9. In Dialogflow click on `Integrations` on the main menu and then click on `Integration Settings` under Google Assistant. A modal window will popup
+10. Toggle on `Auto-preview changes`
+11. Click on `Test` to goto the Actions on Google console 
+12. Go to `Advanced Options >Account Linking`
+13. Select `Yes, allow users to sign up for new accounts via voice` and press `Next`
+14. Select `Google Sign In` and press `Next`
+15. Take note of the `Client ID` and then create a new file in `functions/keys` in your project folder called `constants.js`. Open the `constants.js` in your preffered IDE and paste the below code into it. Replacing `[CLIENT-ID]` with the client ID from Actions on Google console:
 ```JavaScript
 module.exports = {
     ACTIONS_ON_GOOGLE_CLIENT_ID: '[CLIENT-ID]'
 };
 ```
-18. Now open the project root in `Terminal` or `Command Line` and type `Firebase deploy`
-19. Once deployed succesfully open a browser window and go to this website, replacing `[project-id]` with your Firebase project ID: `https://us-central1-[project-id].cloudfunctions.net/authgoogleapi`
-20. The Sign-in with Google page will display. Select the account that used to create your Firebase project. Click `Allow` for prompts. If succesfull you will see: `App successfully configured with new Credentials. You can now close this page.`
-21. Open `index.js` inside `functions` folder in your project folder with your prefferred IDE
-22. Then comment out lines 133 to 159 (this code is used for authorising the Cal. API and is only needed once).
-23. Now open the project root in `Terminal` or `Command Line` and type `Firebase deploy`
+16. Now open the project root in `Terminal` or `Command Line` and type `Firebase deploy`
+17. Once deployed succesfully open a browser window and go to this website, replacing `[project-id]` with your Firebase project ID: `https://us-central1-[project-id].cloudfunctions.net/authgoogleapi`
+18. The Sign-in with Google page will display. Select the account that used to create your Firebase project. Click `Allow` for prompts. If succesfull you will see: `App successfully configured with new Credentials. You can now close this page.`
+19. Open `index.js` inside `functions` folder in your project folder with your prefferred IDE
+20. Then comment out lines 133 to 159 (this code is used for authorising the Cal. API and is only needed once).
+21. Now open the project root in `Terminal` or `Command Line` and type `Firebase deploy`
 
 ### Get the Parts (optional)
 You can find the parts we used below, or use similar parts you might already have lying around.
@@ -135,10 +136,8 @@ You can find the parts we used below, or use similar parts you might already hav
 ### Setup the Electronics (optional)
 
 #### Download the software
-* USB Driver
-    * [CP2104 USB Driver](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers) (for Wemos D1 Mini Pro)
-    * [V1.5 USB Driver](https://wiki.wemos.cc/_media/ch341ser_mac_1.5.zip) (for Wemos D1 Mini - Mac)
-    * [V3.4 USB Driver](https://wiki.wemos.cc/_media/ch341ser_win_3.4.zip) (for Wemos D1 Mini - Windows)
+* USB Driver. The driver might be different if using a different board.
+    * [CP2104 USB Driver](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers) (for LOLIN(Wemos) D1 Mini Pro)
 * [Arduino IDE](https://www.arduino.cc/en/Main/Software)
 
 #### Update Board Manager
@@ -169,7 +168,8 @@ http://arduino.esp8266.com/stable/package_esp8266com_index.json
 
 #### Set the board
 * Go to `Tools > Board`
-* Select LOLIN(Wemos) D1 Mini Pro as your board or if you are holding non-pro version, choose LOLIN(Wemos) D1 R2 & Mini or any other board you are using ![Select Board](./assets/images/image9.png)
+* Select LOLIN(Wemos) D1 Mini Pro as your board or if you are holding non-pro version, choose LOLIN(Wemos) D1 R2 & Mini or any other board you are using
+![Select Board](./assets/images/image9.png)
 * Go to Tools > Upload Speed
 * Select 921600 baud
 * Go to Tools > Port
@@ -179,7 +179,8 @@ http://arduino.esp8266.com/stable/package_esp8266com_index.json
 1. Plug a USB B Mini into the microcontroller to power it and connect the other end of the cable into your computer.
 2. Open the Notify file you downloaded from step 1 in the Prerequisites for flashing microcontroller section. Make sure you open the INO file (Notify.ino). This should open the Arduino IDE.
 3. Also open `Config.h` in the Arduino IDE and replace the `[PROJECT_ID]` in `FIREBASE_URL` with your Firebase project Id. Save it.
-3. Click the arrow to upload the code to your microcontroller. ![Upload code to microcontroller](./assets/images/image12.png)
+3. Click the arrow to upload the code to your microcontroller.
+![Upload code to microcontroller](./assets/images/image12.png)
 
 #### Connecting the microcontroller to your Wifi and Google Home
 1. Open your Voice app on the Google Home
@@ -194,17 +195,18 @@ http://arduino.esp8266.com/stable/package_esp8266com_index.json
 5. Once it is booted, connect to it by searching for the WiFi SSID "Community Keijiban".
 6. Once connected it will prompt you to sign in, use the password: keijiban
     * **Tip:** Use a laptop to connect to “Community Keijiban”. Once connected open a browser in Incognito/Private mode and visit http://192.168.4.1/
-7. A captive portal will open and display the below, click "Configure WiFi" (if the button does not respond try pressing the physical reset button on the microcontroller) ![Captive portal](./assets/images/image10.png)
-8. Select the SSID that the Google Home is connected to ![SSID](./assets/images/image24.png)
+7. A captive portal will open and display the below, click "Configure WiFi" (if the button does not respond try pressing the physical reset button on the microcontroller)
+![Captive portal](./assets/images/image10.png)
+8. Select the SSID that the Google Home is connected to
+![SSID](./assets/images/image24.png)
 9. If password is required to access the network type that in
 10. Type in the Signal ID (see step 3) all lowercase with dashes
-11. Type in the Home name. You can get this from the Home App (see below screenshot) ![Home App UI](./assets/images/image14.png)
+11. Type in the Home name. You can get this from the Home App (see below screenshot)
+![Home App UI](./assets/images/image14.png)
 12. Type in en or jp (all lowercase)
 13. Press Save.
 14. The microcontroller will then restart and connect to the same network as Google Home. 
 15. The Google Home will make a noise when the microcontroller has succesfully connected to it.
-
-
 
 ## Create Groups, Events and Announcements
 
@@ -213,14 +215,16 @@ http://arduino.esp8266.com/stable/package_esp8266com_index.json
 2. Select the `Groups` sheet
 3. Add new group name in row 1 (header)
 4. Add user’s email to respective group
-5. Once done, go to `Sync > Update Groups` in toolbar, if this is your first time doing it follow the on screen instructions to authorize access. ![Google Sheets Groups](./assets/images/image20.png)
+5. Once done, go to `Sync > Update Groups` in toolbar, if this is your first time doing it follow the on screen instructions to authorize access.
+![Google Sheets Groups](./assets/images/image20.png)
 
 
 ### Create Events
 1. Open the Google Sheet you copied
 2. Select the `Events` sheet
 3. Go to `Sync > Add Event/Announcement` in the toolbar
-4. A form will appear on the left side ![Google Sheets Events](./assets/images/image2.png)
+4. A form will appear on the left side
+![Google Sheets Events](./assets/images/image2.png)
 5. Enter event’s details, select the `Event` type
 6. Select one or more (hold shift + click, to select more) groups of which the event belongs to
 7. Check “Active” to mark the event as an active event
