@@ -66,7 +66,7 @@ This repo contains everything you need to create your own community noticeboard.
 4. Now open `functions/language/blurts.json`. The strings in this file are used by [Cloud Text-to-Speech](https://cloud.google.com/text-to-speech/docs/) to create the blurts. You can modify these to match your project's needs.
 5. Rename the folder `functions/keys-sample` to `functions/keys`
 6. Now open the project root in `Terminal` or `Command Line` and type `firebase deploy`
-7. Once deployment has finished note down the `Hosting URL` and the domain of the `Functions`
+7. Once deployment has finished note down the `Hosting URL` and the domain of the `Functions URL`
 
 ### Enable APIs and Create Credentials
 1. Go to [Google Cloud Console](https://console.cloud.google.com), make sure to login using the same account you used to setup Firebase
@@ -78,14 +78,15 @@ This repo contains everything you need to create your own community noticeboard.
 6.  Go back to `APIs & Services > Library` and search for `Google Calendar API`
 7. Select it and press the Enable button
 8. Go to `APIs & Services > Credentials > OAuth consent screen`
+9. Under `Support email` select an email address 
 9. Scroll down add the `Functions` domain under `Authorized domains` 
 10. Then add the `Hosting URL` to `Application Homepage link` and `Application Privacy Policy link`. Then press save.
 11. This should redirect you back to `APIs & Services > Credentials`. Under `OAuth 2.0 client IDs` click on `Web client (auto created by Google Service)`
 12. Under `Authorized redirect URIs` add `https://us-central1-[project-id].cloudfunctions.net/oauthcallback` replacing `[project-id]` with your Firebase project ID. Then press save.
 13. This should redirect you back to `APIs & Services > Credentials`. Now under under `OAuth 2.0 client IDs` download the JSON file for `Web client (auto created by Google Service)` 
-14. Rename the file to `calendar.json` and place into your project folder under `functions>keys`. You may need to create the `keys` folder if you do not have it.
+14. Rename the file to `calendar.json` and place into your project folder under `functions>keys`. You may need to create the `keys` folder if you do not have it or you may need to replace `calendar.json` if one already exists.
 15. Go back to `Google Cloud Console` and open `APIs & Services > Credentials` and select `Create credentials > Service account key`
-16. Create `New Service account` and name it `TTS`. Make sure the key type is set to `JSON` and role is set to `Owner`. Then press `Create`
+16. Create `New Service account` and name it `TTS`. Make sure the key type is set to `JSON` and role is set to `Project > Owner`. Then press `Create`
 17. The JSON will autodownload. Rename it to `tts.json` and place into your project folder under `functions > keys`.
 18. Now open the project root in `Terminal` or `Command Line` and type `Firebase deploy`
 
@@ -110,7 +111,7 @@ This repo contains everything you need to create your own community noticeboard.
 12. Go to `Advanced Options >Account Linking`
 13. Select `Yes, allow users to sign up for new accounts via voice` and press `Next`
 14. Select `Google Sign In` and press `Next`
-15. Take note of the `Client ID` and then create a new file in `functions/keys` in your project folder called `constants.js`. Open the `constants.js` in your preffered IDE and paste the below code into it. Replacing `[CLIENT-ID]` with the client ID from Actions on Google console:
+15. Take note of the `Client ID` and then in `functions/keys` in your project folder open `constants.js`. Replace `[CLIENT-ID]` with the client ID from Actions on Google console:
 ```JavaScript
 module.exports = {
     ACTIONS_ON_GOOGLE_CLIENT_ID: '[CLIENT-ID]'
