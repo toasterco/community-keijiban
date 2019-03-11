@@ -169,6 +169,7 @@ http://arduino.esp8266.com/stable/package_esp8266com_index.json
 #### Set the board
 * Go to `Tools > Board`
 * Select LOLIN(Wemos) D1 Mini Pro as your board or if you are holding non-pro version, choose LOLIN(Wemos) D1 R2 & Mini or any other board you are using
+
 ![Select Board](./assets/images/image9.png)
 * Go to Tools > Upload Speed
 * Select 921600 baud
@@ -179,7 +180,8 @@ http://arduino.esp8266.com/stable/package_esp8266com_index.json
 1. Plug a USB B Mini into the microcontroller to power it and connect the other end of the cable into your computer.
 2. Open the Notify file you downloaded from step 1 in the Prerequisites for flashing microcontroller section. Make sure you open the INO file (Notify.ino). This should open the Arduino IDE.
 3. Also open `Config.h` in the Arduino IDE and replace the `[PROJECT_ID]` in `FIREBASE_URL` with your Firebase project Id. Save it.
-3. Click the arrow to upload the code to your microcontroller.
+3. Click the arrow to upload the code to your microcontroller. 
+
 ![Upload code to microcontroller](./assets/images/image12.png)
 
 #### Connecting the microcontroller to your Wifi and Google Home
@@ -195,14 +197,20 @@ http://arduino.esp8266.com/stable/package_esp8266com_index.json
 5. Once it is booted, connect to it by searching for the WiFi SSID "Community Keijiban".
 6. Once connected it will prompt you to sign in, use the password: keijiban
     * **Tip:** Use a laptop to connect to “Community Keijiban”. Once connected open a browser in Incognito/Private mode and visit http://192.168.4.1/
-7. A captive portal will open and display the below, click "Configure WiFi" (if the button does not respond try pressing the physical reset button on the microcontroller)
+7. A captive portal will open and display the below, click "Configure WiFi" (if the button does not respond try pressing the physical reset button on the microcontroller) 
+
 ![Captive portal](./assets/images/image10.png)
+
 8. Select the SSID that the Google Home is connected to
+
 ![SSID](./assets/images/image24.png)
+
 9. If password is required to access the network type that in
 10. Type in the Signal ID (see step 3) all lowercase with dashes
-11. Type in the Home name. You can get this from the Home App (see below screenshot)
+11. Type in the Home name. You can get this from the Home App (see below screenshot) 
+
 ![Home App UI](./assets/images/image14.png)
+
 12. Type in en or jp (all lowercase)
 13. Press Save.
 14. The microcontroller will then restart and connect to the same network as Google Home. 
@@ -215,7 +223,8 @@ http://arduino.esp8266.com/stable/package_esp8266com_index.json
 2. Select the `Groups` sheet
 3. Add new group name in row 1 (header)
 4. Add user’s email to respective group
-5. Once done, go to `Sync > Update Groups` in toolbar, if this is your first time doing it follow the on screen instructions to authorize access.
+5. Once done, go to `Sync > Update Groups` in toolbar, if this is your first time doing it follow the on screen instructions to authorize access. 
+
 ![Google Sheets Groups](./assets/images/image20.png)
 
 
@@ -223,8 +232,10 @@ http://arduino.esp8266.com/stable/package_esp8266com_index.json
 1. Open the Google Sheet you copied
 2. Select the `Events` sheet
 3. Go to `Sync > Add Event/Announcement` in the toolbar
-4. A form will appear on the left side
+4. A form will appear on the left side 
+
 ![Google Sheets Events](./assets/images/image2.png)
+
 5. Enter event’s details, select the `Event` type
 6. Select one or more (hold shift + click, to select more) groups of which the event belongs to
 7. Check “Active” to mark the event as an active event
