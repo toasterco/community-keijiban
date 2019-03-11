@@ -65,7 +65,7 @@ This repo contains everything you need to create your own community noticeboard.
     * For `API_ORIGIN_WHITELIST` replace `[APPSCRIPT_PROJECT_KEY]` with your AppScripts `Project key`
 4. Now open `functions/language/blurts.json`. The strings in this file are used by [Cloud Text-to-Speech](https://cloud.google.com/text-to-speech/docs/) to create the blurts. You can modify these to match your project's needs.
 5. Rename the folder `functions/keys-sample` to `functions/keys`
-6. Now open the project root in `Terminal` or `Command Line` and type `Firebase deploy`
+6. Now open the project root in `Terminal` or `Command Line` and type `firebase deploy`
 7. Once deployment has finished note down the `Hosting URL` and the domain of the `Functions`
 
 ### Enable APIs and Create Credentials
