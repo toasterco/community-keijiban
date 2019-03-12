@@ -204,7 +204,7 @@ http://arduino.esp8266.com/stable/package_esp8266com_index.json
 1. Plug a USB B Mini into the microcontroller to power it and connect the other end of the cable into your computer.
 2. Open the Notify file you downloaded from step 1 in the Prerequisites for flashing microcontroller section. Make sure you open the INO file (Notify.ino). This should open the Arduino IDE.
 3. Also open `Config.h` in the Arduino IDE and replace the `[PROJECT_ID]` in `FIREBASE_URL` with your Firebase project Id. Save it.
-3. Click the arrow to upload the code to your microcontroller. 
+3. Click ➡️ (right arrow) to upload the code to your microcontroller. 
 
 ![Upload code to microcontroller](./assets/images/image12.png)
 
