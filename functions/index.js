@@ -123,7 +123,9 @@ exports.broadcastEventsAndAnnouncements = functions.https
     return broadcastEventsAndAnnouncements(request, response, managers);
   });
 
-
+// ###
+// COMMENT OUT THE BELOW
+// ###
 // this is for setting up google calendar authentication
 // visit the URL for this Function to request tokens
 exports.authgoogleapi = functions.https.onRequest((req, res) => {

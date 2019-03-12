@@ -144,7 +144,7 @@ module.exports = {
 17. Once deployed succesfully open a browser window and go to this website, replacing `[project-id]` with your Firebase project ID: `https://us-central1-[project-id].cloudfunctions.net/authgoogleapi`
 18. The Sign-in with Google page will display. Select the account that used to create your Firebase project. Click `Allow` for prompts. If succesfull you will see: `App successfully configured with new Credentials. You can now close this page.`
 19. Open `index.js` inside `functions` folder in your project folder with your prefferred IDE
-20. Then comment out lines 133 to 159 (this code is used for authorising the Cal. API and is only needed once).
+20. Then comment out lines 131 to 157 (this code is used for authorising the Cal. API and is only needed once).
 21. Now open the project root in `Terminal` or `Command Line` and type `Firebase deploy`
 
 ### Get the Parts (optional)
