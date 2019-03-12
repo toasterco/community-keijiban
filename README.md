@@ -66,7 +66,7 @@ This repo contains everything you need to create your own community noticeboard.
 4. Now open `functions/language/blurts.json`. The strings in this file are used by [Cloud Text-to-Speech](https://cloud.google.com/text-to-speech/docs/) to create the blurts. You can modify these to match your project's needs.
 5. Rename the folder `functions/keys-sample` to `functions/keys`
 6. Now open the project root in `Terminal` or `Command Line` and type `firebase deploy`
-7. Once deployment has finished note down the `Hosting URL` and the domain of the `Functions URL`
+7. Once deployment has finished note down the `Hosting URL` (e.g. `https://[PROJECT-ID].firebaseapp.com`) and the domain of the `Functions URL` (e.g. `us-central1-[PROJECT-ID].cloudfunctions.net`)
 
 ### Enable APIs and Create Credentials
 1. Go to [Google Cloud Console](https://console.cloud.google.com), make sure to login using the same account you used to setup Firebase
@@ -88,7 +88,7 @@ This repo contains everything you need to create your own community noticeboard.
 
 ![Choose your email](./assets/images/image32.png)
 
-10. Scroll down add the `Functions` domain under `Authorized domains`. For example: 	
+10. Scroll down add the `Functions URL` domain under `Authorized domains`. For example: 	
 `us-central1-[PROJECT-ID].cloudfunctions.net`
 
 ![Choose your email](./assets/images/image33.png)
