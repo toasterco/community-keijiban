@@ -281,11 +281,10 @@ http://arduino.esp8266.com/stable/package_esp8266com_index.json
 Ideas on how to extend this project
 * Currently the project only supports Japanese and English. This can be extended to support other languages with a few modifcations to the code.
 * Close the loop by adding an attending status on the Google Sheet
-* Change the conversation or extend what is supported
-* Give it your own personality
+* Change what the app says or add a bit of your own personality. You can do this directly in [Dialogflow](https://console.dialogflow.com) in the `Intents` section
 * Support your blurts by adding a LED or Servo to your  micocontroller 
 * Create a case for your micocontroller out of paper, cardboard or even 3D print one
-* Change the voice of your app
+* Change the voice of your app, you can do this in [Actions on Google Console](https://console.actions.google.com)
 
 ## Contributors
 Made by [Toaster](https://toaster.co/) and friends at the [Google Creative Lab](https://github.com/googlecreativelab).
