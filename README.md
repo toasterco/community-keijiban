@@ -285,6 +285,7 @@ Ideas on how to extend this project
 * Support your blurts by adding a LED or Servo to your  micocontroller 
 * Create a case for your micocontroller out of paper, cardboard or even 3D print one
 * Change the voice of your app, you can do this in [Actions on Google Console](https://console.actions.google.com)
+* Add recurring announcements/blurts
 
 ## Contributors
 Made by [Toaster](https://toaster.co/) and friends at the [Google Creative Lab](https://github.com/googlecreativelab).
