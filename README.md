@@ -1,9 +1,9 @@
 # Community Keijiban
-Community Keijiban is an [experiment]() that explores how voice and the Assistant can make technology more accessible for new audiences. We designed a voice app for the Wakabadai residential estate that simplified the lives of its residents by bringing the community notice board to their living room. The app announces all new notices, tells the residents what activities are scheduled and reminds them when it's time to attend.
+Community Keijiban is an [experiment]() that explores how voice and the Assistant can make technology more accessible for new audiences. The Yamayuri Club of Wakabadai collaborated with us to design a voice app that simplifies the lives of the people in the residential estate by bringing the community notice board to their living room.The app announces all new notices, tells the residents what activities are scheduled and reminds them when it's time to attend.
 
 Anyone can customise the app for their local community by getting the code to build their own community management tool from scratch, controlled by Google Sheets.
 
-This is an experiment, not an official Toaster or Google product. We will do our best to support and maintain this experiment but results may vary.
+This is an experiment, not an official Toaster or Google product. We will do our best to support and maintain this experiment but your results may vary.
 
 ## Technology
 Community Keijiban is built on [Actions on Google](https://developers.google.com/actions/), the platform that allows you to make things for the Google Assistant/Home. It uses [Dialogflow](https://dialogflow.com/) to handle understanding what the user says, [Firebase Cloud Functions](https://firebase.google.com/docs/functions/) and [Firebase Realtime Database](https://firebase.google.com/docs/database/) for backend code and storing data. It uses [Google App Scripts](https://developers.google.com/apps-script/guides/docs) to share the schedule from Google Sheets to Firebase, [Cloud Text-to-Speech](https://cloud.google.com/text-to-speech/docs/) to create the custom user blurts for notifications and [Arduino](https://www.arduino.cc/en/main/docs) for programming the electronics. 
