@@ -200,6 +200,7 @@ You can find the parts we used below, or use similar parts you might already hav
 * USB Driver. The driver might be different if using a different board.
     * [CP2104 USB Driver](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers) (for LOLIN(Wemos) D1 Mini Pro)
 * [Arduino IDE](https://www.arduino.cc/en/Main/Software)
+    * Arduino IDE `version 1.8.9` has an issue compiling `ESP8266WebServer`. If `1.8.9` is the latest version try downloading a [previous version](https://www.arduino.cc/en/Main/OldSoftwareReleases#previous) such as `1.8.8`.
 
 ### Update Board Manager
 * Open the `Arduino IDE`
@@ -235,13 +236,14 @@ http://arduino.esp8266.com/stable/package_esp8266com_index.json
 * Go to Tools > Upload Speed
 * Select 921600 baud
 * Go to Tools > Port
-* Select the matching COM port for your USB cable. It should be something like `USB.SLABtoUART` or `/dev/cu.wchusbserial14530` or `/dev/cu.wchusbserial1420`
+* Select the matching COM port for your USB cable. It should be something like `USB.SLABtoUART` or `/dev/cu.wchusbserial14530` or `/dev/cu.wchusbserial1420` (if you don't see it plug in your microcontroller and try again)
 
 ### Flashing the microcontroller
 1. Plug a USB B Mini into the microcontroller to power it and connect the other end of the cable into your computer.
 2. Open the Notify file you downloaded from step 1 in the Prerequisites for flashing microcontroller section. Make sure you open the INO file (Notify.ino). This should open the Arduino IDE.
 3. Also open `Config.h` in the Arduino IDE and replace the `[PROJECT_ID]` in `FIREBASE_URL` with your Firebase project Id. Save it.
-3. Click ➡️ (right arrow) to upload the code to your microcontroller. 
+4. Click ➡️ (right arrow) to upload the code to your microcontroller. 
+    * If the program fails to compile with references to `ESP8266WiFi`and `WiFiClientSecure`. Try downloading and installing an [older version of Arduino IDE (v1.8.8)](https://www.arduino.cc/en/Main/OldSoftwareReleases#previous).
 
 ![Upload code to microcontroller](./assets/images/image12.png)
 
