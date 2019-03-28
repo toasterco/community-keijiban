@@ -182,27 +182,29 @@ module.exports = {
 ## Testing the voice app
 1. Go to the [Actions on Google Console](https://console.actions.google.com) and select your project
 2. Click on `Test > Simulator` and try it out. You can also do this directly on your Google Assistant/Home that is logged in with you account.
-    * **Tip:** If the Home says you do not have access or there is no action try sharing the Voice App with yourself fron [Actions on Google Console](https://console.actions.google.com)
+    * **Tip:** If the Home says you do not have access or there is no action try sharing the Voice App with yourself from [Actions on Google Console](https://console.actions.google.com)
 
-## Get the Parts (optional)
+## Building The Blurt Tool (optional)
+
+### Get the Parts
 You can find the parts we used below, or use similar parts you might already have lying around.
 
-### Electronic stuff
+#### Electronic stuff
 * LOLIN(Wemos) D1 Mini Pro ESP8266 WiFi
 * Micro USB cable (data-syncing)
 
-### Your device
+#### Your device
 * Google Home, Google Mini or Phone with the Google Assistant (Android or iOS devices)
 
-## Setup the Electronics (optional)
+### Setup the Electronics
 
-### Download the software
+#### Download the software
 * USB Driver. The driver might be different if using a different board.
     * [CP2104 USB Driver](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers) (for LOLIN(Wemos) D1 Mini Pro)
 * [Arduino IDE](https://www.arduino.cc/en/Main/Software)
     * Arduino IDE `version 1.8.9` has an issue compiling `ESP8266WebServer`. If `1.8.9` is the latest version try downloading a [previous version](https://www.arduino.cc/en/Main/OldSoftwareReleases#previous) such as `1.8.8`.
 
-### Update Board Manager
+#### Update Board Manager
 * Open the `Arduino IDE`
 * Go to `Arduino > Preferences`
 * Copy and paste into the Additional Board Manager URLs field: 
@@ -210,13 +212,13 @@ http://arduino.esp8266.com/stable/package_esp8266com_index.json
 * Press OK
 * Restart the Arduino IDE
 
-### Download microcontroller library
+#### Download microcontroller library
 * Open the `Arduino IDE`
 * Go to `Tools > Board > Boards Manager`
 * Filter by ESP8266 and click install on `esp8266 by ESP8266 Community` version  2.4.2
 * Close the Boards Manager Window
 
-### Download the libraries
+#### Download the libraries
 * Open the Arduino IDE
 * Go to `Sketch > Include Library > Manage Library` then filter for and install the following libraries: 
     * EasyNTPClient  (v1.1.0)
@@ -224,11 +226,9 @@ http://arduino.esp8266.com/stable/package_esp8266com_index.json
     * Esp8266-google-home-notifier (v1.0.6)
     * Esp8266-google-tts (v1.0.7)
     * TaskScheduler (v3.0.2)
-    * DoubleResetDetect(v1.0.0) 
-    * WifiManager (v0.14.0)
 * Close the Library Manager window once all libraries are installed
 
-### Set the board
+#### Set the board
 * Go to `Tools > Board`
 * Select LOLIN(Wemos) D1 Mini Pro as your board or if you are holding non-pro version, choose LOLIN(Wemos) D1 R2 & Mini or any other board you are using
 
@@ -238,46 +238,33 @@ http://arduino.esp8266.com/stable/package_esp8266com_index.json
 * Go to Tools > Port
 * Select the matching COM port for your USB cable. It should be something like `USB.SLABtoUART` or `/dev/cu.wchusbserial14530` or `/dev/cu.wchusbserial1420` (if you don't see it plug in your microcontroller and try again)
 
-### Flashing the microcontroller
-1. Plug a USB B Mini into the microcontroller to power it and connect the other end of the cable into your computer.
-2. Open the Notify file you downloaded from step 1 in the Prerequisites for flashing microcontroller section. Make sure you open the INO file (Notify.ino). This should open the Arduino IDE.
-3. Also open `Config.h` in the Arduino IDE and replace the `[PROJECT_ID]` in `FIREBASE_URL` with your Firebase project Id. Save it.
-4. Click ➡️ (right arrow) to upload the code to your microcontroller. 
-    * If the program fails to compile with references to `ESP8266WiFi`and `WiFiClientSecure`. Try downloading and installing an [older version of Arduino IDE (v1.8.8)](https://www.arduino.cc/en/Main/OldSoftwareReleases#previous).
-
-![Upload code to microcontroller](./assets/images/image12.png)
-
-### Connecting the microcontroller to your Wifi and Google Home
+#### Get your Signal ID
 1. Open your Voice app on the Google Home
     * In English say "Talk to Notice Board"
-    * **Tip:** If the Home says you do not have access or there is no action try sharing the Voice App with yourself fron [Actions on Google Console](https://console.actions.google.com)
+    * **Tip:** If the Home says you do not have access or there is no action try sharing the Voice App with yourself from [Actions on Google Console](https://console.actions.google.com)
 2. When your app runs for the first time it will ask you to sign in. You will need to do this to use the app.
     * **Tip:** If you get stuck in a sign in loop… something like the below please check you have allowed the Assistant to use personal information. 
         * “Alright no problem- just so you know you will not be able to use your account with notice board. but you can come back and sign in again” 
 3. Once signed in you can ask your app for your "Signal ID" by saying "What is my Signal ID" “登録したIDを教えて” or simply "Signal ID". The signal id is used by the microcontroller to identify your account.
     * **Tip:** It's easier to do this on the phone as it will return a written response which you can then copy for the next steps.
-4. Plug a USB B Mini into the microcontroller to power it, it will boot automatically
-5. Once it is booted, connect to it by searching for the WiFi SSID `Community Keijiban`.
-6. Once connected it will prompt you to sign in, use the password: keijiban
-    * **Tip:** Use a laptop to connect to `Community Keijiban`. Once connected open a browser in Incognito/Private mode and visit http://192.168.4.1/
-7. A captive portal will open and display the below, click `Configure WiFi` (if the button does not respond try pressing the physical reset button on the microcontroller)
 
-![Captive portal](./assets/images/image10.png)
-
-8. Select the SSID (WiFi name) that the Google Home is connected to
-
-![SSID](./assets/images/image24.png)
-
-9. If password is required to access the network type that in
-10. Type in the Signal ID (see step 3) all lowercase with dashes
-11. Type in the Home name. You can get this from the Home App (see below screenshot) 
+#### Flashing the microcontroller
+1. Plug a USB B Mini into the microcontroller to power it and connect the other end of the cable into your computer.
+2. Open the Notify file you downloaded from step 1 in the Prerequisites for flashing microcontroller section. Make sure you open the INO file (Notify.ino). This should open the Arduino IDE.
+3. Also open `Config.h` in the Arduino IDE and replace:
+    * `[PROJECT_ID]` in `FIREBASE_URL` with your Firebase project Id.
+    * `YOUR_WIFI_NETWORK` and `YOUR_WIFI_PASSWORD` with your WiFi details.
+    * `your-signal-id` with your Signal ID.
+    * `YOUR_HOME_SPEAKER_NAME` with the name of the device you want to Cast to. You can get this from the Home App (see below screenshot):
 
 ![Home App UI](./assets/images/image14.png)
 
-12. Type in en or jp (all lowercase)
-13. Press Save.
-14. The microcontroller will then restart and connect to the same network as Google Home. 
-15. The Google Home will make a noise when the microcontroller has succesfully connected to it.
+4. Save it.
+5. Click ➡️ (right arrow) icon to upload the code to your microcontroller. 
+    * If the program fails to compile with references to `ESP8266WiFi`and `WiFiClientSecure`. Try downloading and installing an [older version of Arduino IDE (v1.8.8)](https://www.arduino.cc/en/Main/OldSoftwareReleases#previous).
+
+![Upload code to microcontroller](./assets/images/image12.png)
+6. The microcontroller's LED will turn on when connected to your network and the Google Home will make a noise to confirm its connection.
 
 ## Extending the project
 Ideas on how to extend this project

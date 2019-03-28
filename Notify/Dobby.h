@@ -1,8 +1,6 @@
 #ifndef DOBBY_H
 #define DOBBY_H
 
-#define _TASK_WDT_IDS // To enable task unique IDs
-#define _TASK_LTS_POINTER
 #define _TASK_STD_FUNCTION // Needed to allow lambdas so that we may use member functions
 
 #include <Arduino.h>

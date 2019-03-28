@@ -10,18 +10,18 @@
 const int    DEFAULT_PORT                     = 443;
 const long   OFFSET_TIME                      = 60 * 5;
 const long   TASK_INTERVAL_LED                = 0.2 * TASK_SECOND;
-const long   TASK_INTERVAL_NTP                = 0.5 * TASK_MINUTE;
-const long   TASK_INTERVAL_POLL               = 0.2 * TASK_MINUTE;
+const long   TASK_INTERVAL_NTP                = 64 * TASK_SECOND;
+const long   TASK_INTERVAL_POLL               = 2 * TASK_MINUTE;
 const char * GOOGLE_HOME_CONNECTED_SOUND      = "https://actions.google.com/sounds/v1/cartoon/concussive_hit_guitar_boing.ogg";
 const char * DEFAULT_LOCALE                   = "en";
 const char * MSG_HOME_FREE                    = "[Info] Home is free";
 const char * MSG_HOME_NOT_FREE                = "[Info] Home is not free";
+const char * MSG_ERROR_DUPLICATE_EVENT        = "[Info] This event has already been tasked.";
 const char * MSG_ERROR_NO_WIFI                = "[Error] No WIFI connection";
 const char * MSG_ERROR_JSON_PARSE_FAILED      = "[Error] Failure in parsing JSON object.";
 const char * MSG_ERROR_JSON_INVALID           = "[Error] JSON is either invalid or has no results.";
 const char * MSG_ERROR_NTP_TIME_ZERO          = "[Error] NTP Time is 0";
 const char * MSG_ERROR_NOTIFICATIONS_EXPIRED  = "[Error] All notifications have expired.";
-const char * MSG_ERROR_DUPLICATE_EVENT        = "[Error] This event has already been tasked.";
 const char * MSG_ERROR_JSON_CONNECTION_FAILED = "[Error] Connection failed while trying to get JSON";
 
 Dobby::Dobby()
