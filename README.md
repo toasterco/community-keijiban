@@ -240,12 +240,12 @@ http://arduino.esp8266.com/stable/package_esp8266com_index.json
 
 #### Get your Signal ID
 1. Open your Voice app on the Google Home
-    * In English say "Talk to Notice Board"
+    * In English say "Talk to Community Keijiban"
     * **Tip:** If the Home says you do not have access or there is no action try sharing the Voice App with yourself from [Actions on Google Console](https://console.actions.google.com)
 2. When your app runs for the first time it will ask you to sign in. You will need to do this to use the app.
     * **Tip:** If you get stuck in a sign in loop… something like the below please check you have allowed the Assistant to use personal information. 
-        * “Alright no problem- just so you know you will not be able to use your account with notice board. but you can come back and sign in again” 
-3. Once signed in you can ask your app for your "Signal ID" by saying "What is my Signal ID" “登録したIDを教えて” or simply "Signal ID". The signal id is used by the microcontroller to identify your account.
+        * “Alright no problem- just so you know you will not be able to use your account with Community Keijiban. but you can come back and sign in again” 
+3. Once signed in you can ask your app for your "Signal ID" by saying "What is my Signal ID" or simply "Signal ID". The signal id is used by the microcontroller to identify your account.
     * **Tip:** It's easier to do this on the phone as it will return a written response which you can then copy for the next steps.
 
 #### Flashing the microcontroller
