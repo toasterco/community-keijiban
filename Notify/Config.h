@@ -2,7 +2,7 @@
 const int    HTTPS_PORT                  = 443;
 const long   BAUD_RATE                   = 115200; // Arduino's int is signed by default with a range of -32,768 to 32,767
 /* WiFi Network must be 2.4GHz */
-const char * SSID                        = "YOUR_WIFI_NETWORK";
+const char * SSID                        = "YOUR_WIFI_NAME";
 const char * STATION_PASSWORD            = "YOUR_WIFI_PASSWORD";
 /* Signal ID */
 const char * SIGNAL_BOARD_ID             = "your-signal-id";

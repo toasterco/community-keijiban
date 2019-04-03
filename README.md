@@ -225,7 +225,6 @@ http://arduino.esp8266.com/stable/package_esp8266com_index.json
     * ArduinoJson (v5.13.4)
     * Esp8266-google-home-notifier (v1.0.6)
     * Esp8266-google-tts (v1.0.7)
-    * TaskScheduler (v3.0.2)
 * Close the Library Manager window once all libraries are installed
 
 #### Set the board
@@ -233,10 +232,12 @@ http://arduino.esp8266.com/stable/package_esp8266com_index.json
 * Select LOLIN(Wemos) D1 Mini Pro as your board or if you are holding non-pro version, choose LOLIN(Wemos) D1 R2 & Mini or any other board you are using
 
 ![Select Board](./assets/images/image9.png)
-* Go to Tools > Upload Speed
-* Select 921600 baud
-* Go to Tools > Port
+* Go to `Tools > Upload Speed`
+* Select `921600 baud`
+* Go to `Tools > Port`
 * Select the matching COM port for your USB cable. It should be something like `USB.SLABtoUART` or `/dev/cu.wchusbserial14530` or `/dev/cu.wchusbserial1420` (if you don't see it plug in your microcontroller and try again)
+* Go to `Tools > CPU Frequency`
+* Select `160 Mhz`
 
 #### Get your Signal ID
 1. Open your Voice app on the Google Home

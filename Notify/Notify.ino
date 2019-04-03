@@ -1,11 +1,3 @@
-/**
-   * LED Status
-   *
-   * No light = WiFi WiFiManager mode
-   * Rapid blink = failed to connect to WiFi
-   * Solid = connected to WiFi
-   *
-   */
 #include <Arduino.h>
 #include <ESP8266WebServer.h>
 
@@ -14,10 +6,6 @@
 
 Dobby dobby;
 
-/**
- * Do start up things needed for noticeboard...
- * @returns {void}
- */
 void setup()
 {
   pinMode(LED_BUILTIN, OUTPUT);
@@ -47,14 +35,14 @@ void setup()
    *   const char * noticeBoardID
    * );
    */
-  dobby.setup(
-    HOME_ID,
-    HOME_LANG,
-    HTTPS_PORT,
-    FIREBASE_HOST,
-    FIREBASE_URL,
-    SIGNAL_BOARD_ID
-  );
+   dobby.setup(
+     HOME_ID,
+     HOME_LANG,
+     HTTPS_PORT,
+     FIREBASE_HOST,
+     FIREBASE_URL,
+     SIGNAL_BOARD_ID
+   );
 }
 
 void loop()
