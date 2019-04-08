@@ -2,7 +2,7 @@
  * Dobby implementation
  */
 
-#define DOBBY_DEBUG
+//#define DOBBY_DEBUG
 
 #include "Dobby.h"
 
