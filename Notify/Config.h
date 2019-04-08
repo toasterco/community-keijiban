@@ -11,4 +11,4 @@ const char * HOME_LANG                   = "en";
 const char * HOME_ID                     = "YOUR_HOME_SPEAKER_NAME";
 /* Firebase */
 const char * FIREBASE_HOST               = "firebasestorage.googleapis.com";
-const char * FIREBASE_URL                = "/v0/b/[PROJECT_ID].appspot.com/o/notifiers%2F";
+const char * FIREBASE_URL                = "/v0/b/[PROJECT_ID].appspot.com/o/notifiers%2F"; //

@@ -2,7 +2,7 @@
  * Dobby implementation
  */
 
-//#define DOBBY_DEBUG
+#define DOBBY_DEBUG
 
 #include "Dobby.h"
 
@@ -16,6 +16,8 @@ const char * GOOGLE_HOME_CONNECTED_SOUND      = "https://actions.google.com/soun
 const char * DEFAULT_LOCALE                   = "en";
 const char * MSG_HOME_FREE                    = "[Info] Home is free";
 const char * MSG_HOME_NOT_FREE                = "[Info] Home is not free";
+const char * MSG_NEW_EVENT                    = "[Info] New event has been stored.";
+const char * MSG_CAST_TO_DEVICE               = "[Info] Msg/MP3 has been cast.";
 const char * MSG_ERROR_DUPLICATE_EVENT        = "[Info] This event has already been tasked.";
 const char * MSG_ERROR_NO_HOME                = "[Error] No Home device found";
 const char * MSG_ERROR_NO_WIFI                = "[Error] No WIFI connection";
@@ -176,7 +178,7 @@ void Dobby::loop()
    */
 
   #ifdef DOBBY_DEBUG
-    Serial.printf(MSG_DEBUG_HEAP, ESP.getFreeHeap());
+    //Serial.printf(MSG_DEBUG_HEAP, ESP.getFreeHeap());
   #endif
 
   if (WiFi.status() != WL_CONNECTED)
@@ -344,7 +346,18 @@ void Dobby::notify()
     int newNotifyID        = nextEvent["id"].as<int>();
     long newStartTime      = nextEvent["start_time"].as<long>();
 
-    // Check if we have done this already
+    #ifdef DOBBY_DEBUG
+      Serial.println("----m_notification-----");
+      Serial.printf("id: %d\n", m_notification->id);
+      Serial.printf("played: %d\n", m_notification->played);
+      Serial.printf("start_time: %d\n", m_notification->start_time);
+      Serial.println("----new-----");
+      Serial.printf("id: %d\n", newNotifyID);
+      Serial.printf("start_time: %d\n", newStartTime);
+      Serial.println("---------");
+    #endif
+
+    //Check if we have done this already
     if ((currentNotifyID == newNotifyID) && (currentStartTime == newStartTime) && (currentHasPlayed))
     {
       #ifdef DOBBY_DEBUG
@@ -353,24 +366,23 @@ void Dobby::notify()
       return;
     }
 
-    // Create new notification to store new data
-    if ((currentNotifyID != newNotifyID) && (currentStartTime != newStartTime))
+    // Update notification if data has changed
+    if ((currentNotifyID != newNotifyID) || (currentStartTime != newStartTime))
     {
-      Notification * newNotification = new Notification();
-      newNotification->id            = nextEvent["id"].as<int>();
-      newNotification->type          = nextEvent["type"].as<const char*>();
-      newNotification->start_time    = newStartTime;
-      newNotification->intent_type   = nextEvent["intent_type"].as<const char*>();
-      newNotification->msg           = nextEvent["msg"].as<String>();
-      newNotification->played        = false;
+      m_notification->id            = nextEvent["id"].as<int>();
+      m_notification->type          = nextEvent["type"].as<const char*>();
+      m_notification->start_time    = newStartTime;
+      m_notification->intent_type   = nextEvent["intent_type"].as<const char*>();
+      m_notification->msg           = nextEvent["msg"].as<String>();
+      m_notification->played        = false;
 
-      // Delete current pointer and re-point to new object
-      delete m_notification;
-      m_notification = newNotification;
+      #ifdef DOBBY_DEBUG
+        Serial.println(MSG_NEW_EVENT);
+      #endif
     }
 
     long newIntervalTime = _max((long)(newStartTime - m_ntpTime), 0);
-    if (newIntervalTime == 0) {
+    if ((newIntervalTime == 0) && (!currentHasPlayed)) {
       if (getHomeStatus()) {
         // Send audio notification
         if (m_ghn->play(m_notification->msg.c_str()) != true)
@@ -381,6 +393,9 @@ void Dobby::notify()
           return;
         }
         m_notification->played = true;
+        #ifdef DOBBY_DEBUG
+          Serial.println(MSG_CAST_TO_DEVICE);
+        #endif
       }
     }
   }
