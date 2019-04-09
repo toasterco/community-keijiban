@@ -265,6 +265,7 @@ http://arduino.esp8266.com/stable/package_esp8266com_index.json
     * If the program fails to compile with references to `ESP8266WiFi`and `WiFiClientSecure`. Try downloading and installing an [older version of Arduino IDE (v1.8.8)](https://www.arduino.cc/en/Main/OldSoftwareReleases#previous).
 
 ![Upload code to microcontroller](./assets/images/image12.png)
+
 6. The microcontroller's LED will turn on when connected to your network and the Google Home will make a noise to confirm its connection.
 
 ## Extending the project
