@@ -156,7 +156,7 @@ module.exports = {
   },
   PROBLEM_LOGIN_INTENT: {
     intent: 'problem.login.intent',
-    event: 'PROBLEM_LOGIN_INTENT_HANDLER',
+    event: 'PROBLEM_LOGIN_INTENT_EVENT',
     handler: 'problemLoginHandler'
   }
 };
