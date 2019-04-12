@@ -120,7 +120,7 @@ This repo contains everything you need to create your own community noticeboard.
 ### Setup Dialogflow and Google Assistant Intergration
 If you have an account setup on Dialogflow already and signed into your account click on the **Add to Dialogflow** button below and follow the prompts to create a new project. Then continue on with step 6.
 
-[![Noticeboard Boilerplate](https://storage.googleapis.com/dialogflow-oneclick/deploy.svg "Noticeboard Boilerplate")](https://console.dialogflow.com/api-client/#/oneclick?templateUrl=https://github.com/toasterco/community-keijiban/raw/master/assets/dialogflow.zip&agentName=CommunityKeijiban)
+[![Noticeboard Boilerplate](./assets/buttons/deploy.svg "Noticeboard Boilerplate")](https://console.dialogflow.com/api-client/#/oneclick?templateUrl=https://github.com/toasterco/community-keijiban/raw/master/assets/dialogflow.zip&agentName=CommunityKeijiban)
 
 
 1. Go to [Dialogflow](https://dialogflow.com/) and login using the same account you used to access Firebase.
