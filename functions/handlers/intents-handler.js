@@ -140,31 +140,46 @@ const signedInHandler = (conv, params, registered, managers) => {
 
   console.log('REGISTERED STATUS: ', registered.status);
 
-  if (registered.status === 'OK') {
-    // if registered status is ok, add user to database
-    return new Promise((resolve, reject) => {
-      managers.users.addUser(getUserDetailsFromPayload(conv))
-        .then((res) => {
-          // check forward intent event from cache,
-          // if it doesn't exist, follow up to problem intent
-          // otherwise followup to the respective intent
-          if (!conv.data.login_forward_intent_event) {
+  const hasWebBrowser = conv.surface.capabilities.has(
+    'actions.capability.WEB_BROWSER',
+  );
+
+  switch(registered.status) {
+    case 'OK':
+      // if registered status is ok, add user to database
+      return new Promise((resolve, reject) => {
+        managers.users.addUser(getUserDetailsFromPayload(conv))
+          .then((res) => {
+            // check forward intent event from cache,
+            // if it doesn't exist, follow up to problem intent
+            // otherwise followup to the respective intent
+            if (!conv.data.login_forward_intent_event) {
+              conv.followup(INTENT_CONSTANTS.PROBLEM_INTENT.event, {});
+            } else {
+              conv.followup(conv.data.login_forward_intent_event, {});
+            }
+            resolve();
+            return res;
+          })
+          .catch((err) => {
             conv.followup(INTENT_CONSTANTS.PROBLEM_INTENT.event, {});
-          } else {
-            conv.followup(conv.data.login_forward_intent_event, {});
-          }
-          resolve();
-          return res;
-        })
-        .catch((err) => {
-          conv.followup(INTENT_CONSTANTS.PROBLEM_INTENT.event, {});
-          reject(err);
-          console.log('problem in adding user');
-          console.log(err);
-        });
-    });
-  } else {
-    conv.followup(INTENT_CONSTANTS.PROBLEM_LOGIN_INTENT.event, {});
+            reject(err);
+            console.log('problem in adding user');
+            console.log(err);
+          });
+      });
+    case 'CANCELLED':
+      if (!hasWebBrowser) {
+        // On a Smart Display, if the "Personal results" setting is disabled, the sign in status is 'CANCELLED'
+        // See https://github.com/actions-on-google/actions-on-google-nodejs/issues/231#issuecomment-470281010
+        // Inform the user that the "Personal results" setting needs to be enabled to sign in
+
+        conv.followup(INTENT_CONSTANTS.PROBLEM_LOGIN_INTENT.event, {});
+      }
+      break;
+    default:
+      conv.followup(INTENT_CONSTANTS.PROBLEM_LOGIN_INTENT.event, {});
+      break;
   }
 };
 
@@ -1723,7 +1738,8 @@ const defaultCancelHandler = (conv, params, registered, managers) => {
 };
 
 const problemHandler = (conv, params, registered, managers) => {
-  console.log('problem intent handler');
+  // reset prefix content
+  conv.data.intent_prefix_content = null;
   const incoming = _getIncomingResponse(conv);
   conv.close(new SimpleResponse({
     text: incoming.displayText,
@@ -1732,6 +1748,9 @@ const problemHandler = (conv, params, registered, managers) => {
 };
 
 const problemLoginHandler = (conv, params, registered, managers) => {
+  // reset prefix content
+  conv.data.intent_prefix_content = null;
+
   const incoming = _getIncomingResponse(conv);
   conv.close(new SimpleResponse({
     text: incoming.displayText,

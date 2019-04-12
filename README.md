@@ -1,5 +1,5 @@
 # Community Keijiban
-Community Keijiban is an [experiment]() that explores how voice and the Assistant can make technology more accessible for new audiences. The Yamayuri Club of Wakabadai collaborated with us and friends at the Google Creative Lab to design a voice app that simplifies the lives of the people in the residential estate by bringing the community notice board to their living room.The app announces all new notices, tells the residents what activities are scheduled and reminds them when it's time to attend.
+Community Keijiban is an [experiment]() that explores how voice and the Assistant can make technology more accessible for new audiences. The Yamayuri Club of Wakabadai collaborated with us and friends at the Google Creative Lab to design a voice app that simplifies the lives of the people in the residential estate by bringing the community notice board to their living room. The app announces all new notices, tells the residents what activities are scheduled and reminds them when it's time to attend.
 
 Anyone can customise the app for their local community by getting the code to build their own community management tool from scratch, controlled by Google Sheets.
 
@@ -270,6 +270,7 @@ http://arduino.esp8266.com/stable/package_esp8266com_index.json
     * If the program fails to compile with references to `ESP8266WiFi`and `WiFiClientSecure`. Try downloading and installing an [older version of Arduino IDE (v1.8.8)](https://www.arduino.cc/en/Main/OldSoftwareReleases#previous).
 
 ![Upload code to microcontroller](./assets/images/image12.png)
+
 6. The microcontroller's LED will turn on when connected to your network and the Google Home will make a noise to confirm its connection.
 
 ## Extending the project
