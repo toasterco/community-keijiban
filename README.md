@@ -118,8 +118,13 @@ This repo contains everything you need to create your own community noticeboard.
 18. Now open the project root in `Terminal` or `Command Line` and type `Firebase deploy`
 
 ### Setup Dialogflow and Google Assistant Intergration
+If you have an account setup on Dialogflow already and signed into your account click on the **Add to Dialogflow** button below and follow the prompts to create a new project. Then continue on with step 6.
+
+[![Noticeboard Boilerplate](https://storage.googleapis.com/dialogflow-oneclick/deploy.svg "Noticeboard Boilerplate")](https://console.dialogflow.com/api-client/#/oneclick?templateUrl=https://github.com/toasterco/community-keijiban/raw/master/assets/dialogflow.zip&agentName=CommunityKeijiban)
+
+
 1. Go to [Dialogflow](https://dialogflow.com/) and login using the same account you used to access Firebase.
-    * If you don't have an account it's free to sign up and use.
+    * If you don't have an account it's free to sign up and use. 
 2. Create a new agent
     * Give it a name e.g. `CommunityKeijiban`
     * Set the agent's default language and timezone
