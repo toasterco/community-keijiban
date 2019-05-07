@@ -1,5 +1,5 @@
 # Community Keijiban
-Community Keijiban is an [experiment]() that explores how voice and the Assistant can make technology more accessible for new audiences. The Yamayuri Club of Wakabadai collaborated with us and friends at the Google Creative Lab to design a voice app that simplifies the lives of the people in the residential estate by bringing the community notice board to their living room. The app announces all new notices, tells the residents what activities are scheduled and reminds them when it's time to attend.
+Community Keijiban is an [experiment](https://experiments.withgoogle.com/community) that explores how voice and the Assistant can make technology more accessible for new audiences. The Yamayuri Club of Wakabadai collaborated with us and friends at the Google Creative Lab to design a voice app that simplifies the lives of the people in the residential estate by bringing the community notice board to their living room. The app announces all new notices, tells the residents what activities are scheduled and reminds them when it's time to attend.
 
 Anyone can customise the app for their local community by getting the code to build their own community management tool from scratch, controlled by Google Sheets.
 
