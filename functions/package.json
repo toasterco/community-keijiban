@@ -13,14 +13,14 @@
     "firebase-admin": "~6.0.0",
     "firebase-functions": "^2.0.3",
     "actions-on-google": "^2.4.1",
-    "googleapis": "^35.0.0",
-    "google-auth-library": "^2.0.1",
+    "googleapis": "",
+    "google-auth-library": "",
     "moment": "^2.22.2",
     "moment-timezone": "^0.5.23",
     "request": "^2.88.0",
     "cors": "^2.8.5",
     "random-words": "^1.1.0",
-    "@google-cloud/text-to-speech": "^0.3.0"
+    "@google-cloud/text-to-speech": "^1.1.2"
   },
   "devDependencies": {
     "eslint": "^4.12.0",
