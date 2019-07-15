@@ -20,7 +20,7 @@
     "request": "^2.88.0",
     "cors": "^2.8.5",
     "random-words": "^1.1.0",
-    "@google-cloud/text-to-speech": "^0.3.0"
+    "@google-cloud/text-to-speech": "^1.1.2"
   },
   "devDependencies": {
     "eslint": "^4.12.0",
