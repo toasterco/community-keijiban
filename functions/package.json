@@ -16,7 +16,7 @@
     "googleapis": "^35.0.0",
     "google-auth-library": "^2.0.1",
     "moment": "^2.22.2",
-    "moment-timezone": "^0.5.23",
+    "moment-timezone": "^0.5.35",
     "request": "^2.88.0",
     "cors": "^2.8.5",
     "random-words": "^1.1.0",
